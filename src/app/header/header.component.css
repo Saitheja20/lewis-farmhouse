@@ -1,0 +1,522 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --gray: #ccc;
+  --darkblack: #000;
+  --lightgreen: #c7da82;
+  --black: #000;
+  --white: #fff;
+  --menu-speed: 0.75s;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+li,
+ul {
+  text-decoration: none !important;
+  list-style-type: none;
+}
+
+/* navbar section */
+.navbar {
+  background-color: var(--darkblack) !important;
+  padding: 0;
+}
+
+.navbar .container-fluid {
+  padding: 0 180px;
+  align-items: end;
+  display: flex;
+}
+
+.navbar-brand {
+  padding: 0;
+}
+
+.navbar-brand img {
+  width: 160px;
+}
+
+.navbar-expand-lg .navbar-collapse {
+  justify-content: end;
+  padding-bottom: 40px;
+  flex-basis: 100%;
+  position: relative;
+}
+
+.navbar-expand-lg .navbar-collapse::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 82%;
+  height: 5px;
+  background-color: #ccc;
+  bottom: 0;
+}
+
+.navbar-expand-lg .navbar-nav {
+  gap: 15px;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+  font-size: 19px;
+  color: var(--white);
+  position: relative;
+  text-shadow: none;
+  position: relative;
+}
+
+.nav-link::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  color: #ffffff;
+  content: attr(data-hover);
+  transition: ease-out 0.3s;
+  transform: scale(1.4, 1.4);
+  opacity: 0;
+  text-align: center;
+  padding: 8px;
+}
+
+.nav-item:hover .nav-link::before {
+  transform: scale(1, 1);
+  opacity: 1;
+  /* padding-bottom:10px; */
+}
+
+.nav-link:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: #fff;
+  opacity: 0;
+  transform: translateY(5px);
+  transition: transform 0.3s, opacity 0.3s;
+  pointer-events: none;
+}
+
+.nav-item:hover .nav-link:after {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+.house_top_btn {
+  margin-left: 100px;
+}
+
+.house_top_btn a {
+  font-size: 24px;
+  font-weight: bold;
+  color: #000;
+  background-color: var(--gray);
+  padding: 12px 20px;
+  border: solid 1px transparent;
+  transition: 0.5s all;
+  background-color: #ccc;
+}
+
+.house_top_btn a:hover {
+  color: var(--gray);
+  background-color: transparent;
+  border: solid 1px var(--gray);
+}
+
+.dropdown-toggle::after {
+  margin-left: unset !important;
+  border: 1px solid;
+}
+
+/***************/
+
+.nav_call_toggle {
+  display: none;
+}
+
+.menu-wrap {
+  position: relative;
+  z-index: 1;
+}
+
+.menu-wrap .toggler {
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  opacity: 0;
+}
+
+.menu-wrap .hamburger {
+  position: relative;
+  z-index: 1;
+  width: 60px;
+  height: 60px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -63px;
+  margin-left: -4px;
+}
+
+/* Hamburger Line */
+.menu-wrap .hamburger>div {
+  position: relative;
+  flex: none;
+  width: 100%;
+  height: 2px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease;
+}
+
+/* Hamburger Lines - Top & Bottom */
+.menu-wrap .hamburger>div::before,
+.menu-wrap .hamburger>div::after {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  top: -10px;
+  width: 100%;
+  height: 2px;
+  background: inherit;
+}
+
+/* Moves Line Down */
+.menu-wrap .hamburger>div::after {
+  top: 10px;
+}
+
+/* Toggler Animation */
+.menu-wrap .toggler:checked+.hamburger>div {
+  transform: rotate(135deg);
+}
+
+/* Turns Lines Into X */
+.menu-wrap .toggler:checked+.hamburger>div:before,
+.menu-wrap .toggler:checked+.hamburger>div:after {
+  top: 0;
+  transform: rotate(90deg);
+}
+
+/* Rotate On Hover When Checked */
+.menu-wrap .toggler:checked:hover+.hamburger>div {
+  transform: rotate(225deg);
+}
+
+/* Show Menu */
+.menu-wrap .toggler:checked~.menu {
+  visibility: visible;
+}
+
+.menu-wrap .toggler:checked~.menu>div {
+  transform: scale(1.5);
+  transition-duration: var(--menu-speed);
+}
+
+.menu-wrap .toggler:checked~.menu>div>div {
+  opacity: 1;
+  transition: opacity 0.4s ease 0.4s;
+}
+
+.menu-wrap .menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 30%;
+  height: 100%;
+  visibility: hidden;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-wrap .menu>div {
+  background: var(--darkblack);
+  border-radius: 50%;
+  width: 200vw;
+  height: 200vw;
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  transform: scale(0);
+  transition: all 0.4s ease;
+}
+
+.menu-wrap .menu>div>div {
+  text-align: start;
+  max-width: 90vw;
+  max-height: 100vh;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.menu-wrap .menu>div>div>ul>li {
+  list-style: none;
+  color: #fff;
+  padding: 8px 0;
+}
+
+.menu-wrap .menu>div>div>ul>li>a {
+  color: var(--white);
+  transition: color 0.4s ease;
+  font-size: 14px;
+}
+
+.menu-wrap .menu {
+  text-align: start;
+  width: 50%;
+
+}
+
+.menu ul li {
+  position: relative;
+}
+
+.menu li::before {
+  content: "";
+  position: absolute;
+  top: 32px;
+  left: 0px;
+  width: 16px;
+  height: 2px;
+  background-color: var(--gray);
+  transition: width 0.3s ease;
+}
+
+.menu li::after {
+  content: "";
+  position: absolute;
+  top: 32px;
+  left: 18px;
+  border-radius: 20px;
+  width: 3px;
+  height: 2px;
+  background-color: var(--gray);
+  transition: width 0.3s ease;
+}
+
+.menu li:hover::before {
+  width: 100%;
+  transition: width 0.3s ease;
+}
+
+.dropdown-menu {
+  --bs-dropdown-bg: #201854;
+}
+
+.dropdown-item {
+  text-align: center;
+  color: white;
+  border-bottom: 1px solid white;
+}
+
+.dropdown-menu a:hover {
+  background-color: var(--bs-dropdown-link-hover-bg);
+}
+
+/**************/
+
+@media (max-width: 1710px) {
+  .navbar-expand-lg .navbar-collapse::after {
+    width: 93%;
+  }
+
+  .house_top_btn {
+    margin-left: 60px;
+  }
+}
+
+@media (max-width: 1680px) {
+  .house_top_btn {
+    margin-left: 40px;
+  }
+
+
+}
+
+@media (max-width: 1600px) {
+  .navbar .container-fluid {
+    padding: 0 120px;
+  }
+
+  .navbar-expand-lg .navbar-collapse::after {
+    width: 93%;
+  }
+
+  .house_top_btn {
+    margin-left: 64px;
+  }
+
+}
+
+@media (max-width: 1536px) {
+  .house_top_btn {
+    margin-left: 40px;
+  }
+
+  .navbar-expand-lg .navbar-collapse::after {
+    width: 95%;
+  }
+}
+
+@media (max-width: 1440px) {
+  .navbar .container-fluid {
+    padding: 0 100px;
+  }
+
+  .navbar-expand-lg .navbar-nav .nav-link {
+    font-size: 17px;
+  }
+
+  .navbar-expand-lg .navbar-collapse::after {
+    width: 93%;
+  }
+}
+
+@media (max-width: 1366px) {
+  .house_top_btn {
+    margin-left: 30px;
+  }
+
+  .navbar-expand-lg .navbar-nav {
+    gap: 10px;
+  }
+
+  .navbar-expand-lg .navbar-nav .nav-link {
+    font-size: 15px;
+  }
+
+  .navbar-expand-lg .navbar-collapse::after {
+    width: 90%;
+  }
+
+}
+
+@media (max-width: 1343px) {
+  .navbar-expand-lg .navbar-collapse::after {
+    width: 92%;
+  }
+}
+
+@media (max-width: 1280px) {
+  .navbar-expand-lg .navbar-nav {
+    gap: 5px;
+  }
+
+  .navbar-expand-lg .navbar-collapse::after {
+    width: 94%;
+  }
+}
+
+@media (max-width: 1200px) {
+  .navbar .container-fluid {
+    padding: 0 70px;
+  }
+
+  .navbar-expand-lg .navbar-collapse::after {
+    width: 94%;
+  }
+
+  .house_top_btn a {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .navbar .container-fluid {
+    padding: 0 50px;
+  }
+
+  .house_top_btn {
+    margin-left: 10px;
+  }
+
+  .navbar-expand-lg .navbar-nav {
+    gap: 0px;
+  }
+
+  .navbar-expand-lg .navbar-nav .nav-link {
+    font-size: 14px;
+  }
+
+  .navbar-expand-lg .navbar-collapse::after {
+    width: 99%;
+  }
+}
+
+@media (max-width: 992px) {
+  .navbar-expand-lg .navbar-nav .nav-link {
+    font-size: 13px;
+  }
+
+  .house_top_btn a {
+    font-size: 18px;
+  }
+}
+
+@media(max-width:991px) {
+  .nav_call_toggle {
+    display: flex;
+  }
+
+  .navbar .container-fluid {
+
+    align-items: center;
+
+  }
+
+
+}
+
+@media(max-width:768px) {
+  .navbar-brand img {
+    width: 125px;
+  }
+}
+
+@media(max-width:540px) {
+  .menu-wrap .menu {
+    text-align: start;
+    width: 100%;
+  }
+
+  .navbar .container-fluid {
+    padding: 0 10px;
+  }
+
+  .navbar-brand img {
+    width: 100px;
+  }
+}
+
+@media(max-width:432px) {
+  .menu-wrap .menu>div>div>ul>li>a {
+    font-size: 12px;
+  }
+}
