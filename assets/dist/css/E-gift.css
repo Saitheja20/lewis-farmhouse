@@ -1,0 +1,408 @@
+.gift-sec{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    padding:50px 0px;
+}
+.gift-sec h1{   
+     margin-bottom: 30px;
+font-size: 36px;
+color:#9cbe22;
+}
+.card-text h5{
+    font-size:24px;
+    line-height:31px;
+    font-weight:600;
+    margin-bottom:10px;
+}
+.card-text p{
+    font-size:13px;
+    line-height: 28px;
+    color:black;
+    margin-bottom:-8px;
+}
+.stock{
+    margin-bottom:10px;
+}
+
+.service{
+    height:auto;
+    padding:50px 0px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.service h1 {
+  font-size: 35px;
+  text-align: center;
+  margin-bottom: 24px;
+  font-weight: bold;
+}
+.img-bor {
+    background-color: white;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 5px;
+    margin-bottom:26px;
+    position: relative;
+    overflow: hidden;
+}
+.ser-img img{
+  width:100%;
+
+    object-fit: cover;
+    object-position: center;
+    background-size: cover;
+    border-radius: 5px;
+}
+.img-con {
+    margin-top: -12px;
+    align-items: center;
+    justify-content: center;
+}
+.img-con p{
+    font-size:13px;
+}
+.img-con h4{
+    padding:12px 0px;
+    font-size: 18px;
+    line-height:1;
+    font-weight:bold;
+   
+}
+.ser-middle{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flip-container {
+  perspective: 1000px; 
+  position: relative;
+ 
+  height:260px;
+ 
+}
+.flipper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s; 
+  transform-style: preserve-3d; 
+}
+
+
+.front,
+.back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; 
+}
+
+
+.front {
+  z-index: 2; 
+
+}
+
+
+ .back {
+  /* padding:10px 15px; */
+  transform: rotateY(180deg); 
+  background-image: linear-gradient(#1e1753 35%, white 10%);
+  /* background-color: #1e1753;  */
+}
+.back h6{
+    font-size:18px;
+    font-weight:500px;
+    color:white;
+    margin-top:12px;
+
+}
+.back p{
+ 
+    font-size: 14px;
+    color:white;
+    line-height: 28px;
+ 
+    
+}
+.pkr{
+    color:#1e1753 !important;
+    font-size:16px !important;
+    margin-top:5px;
+}
+.text-custom-xs {
+    font-size: 13px !important;
+}
+.text-green {
+    --bs-text-opacity: 1;
+    color: rgba(var(--bs-green-rgb), var(--bs-text-opacity)) !important;
+}
+svg:not(:host).svg-inline--fa, svg:not(:root).svg-inline--fa {
+    overflow: visible;
+    box-sizing: content-box;
+}
+.svg-inline--fa {
+    display: var(--fa-display, inline-block);
+    height: 1em;
+    overflow: visible;
+    vertical-align: -.125em;
+}
+.btn-outline-theme, .btn-outline-theme:hover {
+    border: 1px solid #9cbe22;
+    color:#9cbe22;
+}
+.btn-theme, .btn-theme:hover {
+    background: #9cbe22 !important;
+    background-image: linear-gradient(to right, #9cbe22, #9cbe22) !important;
+    color: white;
+}
+ .back img{
+    display:block;
+    margin:5px auto 5px 10px;
+    width:50px;
+    height:50px;
+    margin-top:20px;
+    font-weight: bold;
+    filter:brightness(8) invert(1);
+}
+
+.flip-container:hover .flipper {
+  transform: rotateY(180deg); 
+}
+
+@media(max-width:1366px){
+
+    .flip-container {
+        height: 243px;
+    
+}
+.back p{
+  font-size: 14px;
+  line-height: 25px;
+  
+}
+
+}
+@media(max-width:1200px){
+.back {
+  padding: 20px 30px;
+}
+}
+@media(max-width:1199px){
+  .flip-container {
+    height: 232px;
+}
+  .back {
+      padding: 10px 10px;
+  }
+  .back img {
+    width: 40px;
+    height: 40px;
+    margin-top: 10px;
+}
+.img-con h4 {
+  padding: 19px 0px;
+}
+.card-footer .row .col-6{
+  width: 45%;
+}
+.back {
+
+  background-image: linear-gradient(#1e1753 42%, white 10%);
+ 
+}
+
+
+}
+@media(max-width:1024px){
+  .flip-container {
+    height: 224px;
+}
+}
+@media(max-width:992px){
+
+}
+@media(max-width:991px){
+.ser-img img {
+  width: 100%;
+}
+.flip-container {
+  height: 288px;
+}
+.back {
+  background-image: linear-gradient(#1e1753 28%, white 10%);
+}
+.back p {
+  font-size: 14px;
+  line-height: 30px;
+  padding: 0px 10px;
+}
+.img-con h4 {
+  padding: 12px 0px;
+}
+}
+@media(max-width:767px){
+.back p {
+  font-size: 14px;
+  line-height: 22px;
+  padding: 0px 10px;
+}
+.flip-container {
+  height: 416px;
+}
+.back p {
+  font-size: 16px;
+  line-height: 40px;
+}
+.back img {
+  width: 50px;
+  height: 50px;
+  margin-top: 20px;
+}
+.back {
+  padding: 35px 50px;
+}
+.back {
+  background-image: linear-gradient(#1e1753 27%, white 10%);
+}
+.card-footer .row .col-6 {
+  width: 39%;
+}
+}
+@media(max-width:600px){
+.img-con h4 {
+  padding: 11px 0px;
+}
+}
+@media(max-width:540px){
+  .flip-container {
+    height: 416px;
+}
+.back p {
+  font-size: 15px;
+  line-height: 40px;
+ 
+}
+}
+@media(max-width:492px){
+  .flip-container {
+    height: 392px;
+}
+  .img-con h4 {
+    padding: 14px 0px;
+}
+.back p {
+  margin-top: 20px;
+}
+.back {
+  padding: 30px 50px;
+}
+.back {
+  background-image: linear-gradient(#1e1753 32%, white 10%);
+}
+}
+@media(max-width:432px){
+  .flip-container {
+    height: 351px;
+}
+.back {
+  padding: 30px 30px;
+}
+.back img {
+  margin-top: 0px;
+}
+.back p {
+  margin-top: 5px;
+}
+}
+
+@media(max-width:414px){
+
+  .back {
+    padding: 31px 30px;
+}
+.back p {
+  font-size: 15px;
+  line-height: 35px;
+}
+}
+@media (max-width: 400px) {
+  .flip-container {
+    height: 322px;
+}
+  .back {
+    padding: 25px 25px;
+}
+.back p {
+  font-size: 15px;
+  line-height: 30px;
+}
+}
+@media (max-width:393px) {
+
+
+}
+@media (max-width: 385px) {
+  .flip-container {
+    height: 303px;
+}
+  .img-con h4 {
+    padding: 12px 0px;
+    font-size: 16px;
+}
+.back {
+  padding: 20px 21px;
+}
+}
+@media (max-width: 375px) {
+  .flip-container {
+    height: 310px;
+}
+  .back p {
+    font-size: 14px;
+    line-height: 30px;
+}
+.back {
+  padding: 32px 21px;
+}
+
+}
+@media (max-width: 360px) {
+.back p {
+  font-size: 14px;
+  line-height: 30px;
+}
+.flip-container {
+  height: 291px;
+}
+.back {
+  padding: 26px 21px;
+}
+.back p {
+  font-size: 14px;
+  line-height: 24px;
+}
+}
+@media (max-width: 320px) {
+  
+  .flip-container {
+    height: 263px;
+}
+.back p {
+  font-size: 14px;
+  line-height: 24px;
+}
+.back img {
+  width: 40px;
+  height: 40px;
+}
+.back {
+  padding: 20px 10px;
+}
+}
+
+

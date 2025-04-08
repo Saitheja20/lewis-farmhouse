@@ -1,1 +1,287 @@
-<p>footer works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+</head>
+<body>
+  <!-- <footer>
+    <div class="loc-map">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d48763.35361450015!2d-83.07575023727216!3d40.193275734911985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8838f140c43caf23%3A0x44c9c1feada3da2c!2sLewis%20Center%2C%20OH%2C%20USA!5e0!3m2!1sen!2sin!4v1736587357598!5m2!1sen!2sin" width="100%" height="700" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <div class="add-foot">
+      <div class="booking-section">
+        <div class="form-container">
+          <div class="book-now">BOOK NOW</div>
+          <div class="row">
+            <div class="col-lg-8">
+              <form (ngSubmit)="onSubmit()">
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label for="full-name">Full Name</label>
+                      <input type="text" id="full-name" placeholder="Enter your name" [(ngModel)]="bookingData.fullName" name="fullName" required>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label for="phone">Phone No.</label>
+                      <input type="tel" id="phone" placeholder="9876543210" [(ngModel)]="bookingData.phone" name="phone" required>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label for="email">Email Address *</label>
+                      <input type="email" id="email" placeholder="sample@gmail.com" [(ngModel)]="bookingData.email" name="email" required>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label for="date">Date</label>
+                      <input type="date" id="date" [(ngModel)]="bookingData.date" name="date" required>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="col-lg-4 sub-for">
+              <button type="submit" class="submit-btn" (click)="onSubmit()">SUBMIT</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="footer-sec">
+          <div class="footer-content">
+            <div>
+              <img src="#" alt="Lewis Center Farmhouse Logo" style="width: 60px; height: auto;">
+            </div>
+            <div>
+              <h3>ADDRESS</h3>
+              <p>736 Blue Spring Ave.<br>Smithtown, NY 11787</p>
+            </div>
+            <div>
+              <h3>CONTACT</h3>
+              <p>(+1) 245 026 3021<br>infor&#64;gmail.com</p>
+              <p>(+1) 245 026 3021<br>infor@gmail.com</p>
+            </div>
+            <div>
+              <h3>FOLLOW US</h3>
+              <div class="foote_text_list" id="foot-list">
+                <a href=""><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href=""><i class="fa-brands fa-instagram"></i></a>
+                <a href=""><i class="fa-brands fa-youtube"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="copy-right">
+          <div class="container footer-copy">
+            <p>Copyright ©  2024 Lewis Center Farmhouse / All rights reserved</p>
+            <span>Design &#64;  <a href="https://kakatiyasolutions.com/" target="_blank">Kakatiya Solutions</a></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+<footer>
+    <div class="loc-map">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d48763.35361450015!2d-83.07575023727216!3d40.193275734911985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8838f140c43caf23%3A0x44c9c1feada3da2c!2sLewis%20Center%2C%20OH%2C%20USA!5e0!3m2!1sen!2sin!4v1736587357598!5m2!1sen!2sin"
+         width="100%" height="700" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <div class="add-foot">
+
+    <div class="booking-section" data-aos="fade-down" data-aos-duration="2000">
+        <div class="form-container">
+            <div class="book-now">BOOK NOW</div>
+            <div class="row">
+                <div class="col-lg-8">
+                <form>
+                    <div class="row">
+                        <div class="col-lg-6">
+                <div class="form-group">
+                    <label for="full-name">Full Name</label>
+                    <input type="text" id="full-name" placeholder="Enter your name">
+                </div>
+                </div>
+                <div class="col-lg-6">
+                <div class="form-group">
+                    <label for="phone">Phone No.</label>
+                    <input type="tel" id="phone" placeholder="9876543210">
+                </div>
+                </div>
+                <div class="col-lg-6">
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" placeholder="sample@gmail.com" required>
+                </div>
+                </div>
+                <div class="col-lg-6">
+                <div class="form-group">
+                    <label for="date">Date</label>
+                    <input type="date" id="date">
+                </div>
+                </div>
+                </div>
+
+            </form>
+                </div>
+                <div class="col-lg-4 sub-for">
+
+
+                <h2 type="submit" class="submit-btn">SUBMIT</h2>
+                </div>
+
+            </div>
+        </div>
+    </div>
+      <div class="container">
+    <div class="footer-sec">
+        <div class="footer-content">
+            <div  data-aos="fade-right" data-aos-duration="1000">
+                <img src="#" alt="Lewis Center Farmhouse Logo" style="width: 60px; height: auto;">
+            </div>
+            <div  data-aos="fade-up-right" data-aos-duration="2000">
+                <h3>ADDRESS</h3>
+                <p>736 Blue Spring Ave.<br>Smithtown, NY 11787</p>
+            </div>
+            <div  data-aos="fade-right" data-aos-duration="2500">
+                <h3>CONTACT</h3>
+                <p>(+1) 245 026 3021<br>infor@gmail.com</p>
+            </div>
+            <div  data-aos="fade-right" data-aos-duration="3000">
+                <h3>FOLLOW US</h3>
+                <div class="foote_text_list" id="foot-list">
+                <a href=""><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href=""> <i class="fa-brands fa-instagram"></i></a>
+
+
+                    <a href=""><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="copy-right">
+        <div class="container footer-copy">
+        <p>Copyright ©  2024 Lewis Center Farmhouse / All rights reserved</p>
+        <span>Design @ <a href="https://kakatiyasolutions.com/" target="_blank">Kakatiya Solutions</a></span>
+        </div>
+    </div>
+    </div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"  crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>-->
+<footer>
+  <div class="loc-map">
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d48763.35361450015!2d-83.07575023727216!3d40.193275734911985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8838f140c43caf23%3A0x44c9c1feada3da2c!2sLewis%20Center%2C%20OH%2C%20USA!5e0!3m2!1sen!2sin!4v1736587357598!5m2!1sen!2sin"
+       width="100%" height="700" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+  <div class="add-foot">
+
+  <div class="booking-section" data-aos="fade-down" data-aos-duration="2000">
+      <div class="form-container">
+          <div class="book-now">BOOK NOW</div>
+          <div class="row">
+              <div class="col-lg-8 col-md-8">
+              <form>
+                  <div class="row">
+                      <div class="col-lg-6 col-md-6">
+              <div class="form-group">
+                  <label for="full-name">Full Name</label>
+                  <input type="text" id="full-name" placeholder="Enter your name">
+              </div>
+              </div>
+              <div class="col-lg-6 col-md-6">
+              <div class="form-group">
+                  <label for="phone">Phone No.</label>
+                  <input type="tel" id="phone" placeholder="9876543210">
+              </div>
+              </div>
+              <div class="col-lg-6 col-md-6">
+              <div class="form-group">
+                  <label for="email">Email Address *</label>
+                  <input type="email" id="email" placeholder="sample@gmail.com" required>
+              </div>
+              </div>
+              <div class="col-lg-6 col-md-6">
+              <div class="form-group">
+                  <label for="date">Date</label>
+                  <input type="date" id="date">
+              </div>
+              </div>
+              </div>
+
+          </form>
+              </div>
+              <div class="col-lg-4  col-md-4 sub-for">
+
+
+              <h2 type="submit" class="submit-btn">SUBMIT</h2>
+              </div>
+
+          </div>
+      </div>
+  </div>
+    <div class="container fot-con">
+  <div class="footer-sec">
+      <div class="footer-content">
+          <div  data-aos="fade-up" data-aos-duration="1000">
+              <img src="assets/img/properties/logo.png" alt="Lewis Center Farmhouse Logo" style="width: 265px; height: auto;">
+          </div>
+          <div  data-aos="fade-up" data-aos-duration="2000">
+              <h3>ADDRESS</h3>
+              <p>736 Blue Spring Ave.<br>Smithtown, NY 11787</p>
+          </div>
+          <div  data-aos="fade-up" data-aos-duration="2500">
+              <h3>CONTACT</h3>
+              <p>(+1) 245 026 3021<br>infor&#64;gmail.com</p>
+          </div>
+          <div  data-aos="fade-up" data-aos-duration="3000">
+              <h3>FOLLOW US</h3>
+              <div class="foote_text_list" id="foot-list">
+              <a href=""><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                  <a href=""> <i class="fa-brands fa-instagram"></i></a>
+
+
+                  <a href=""><i class="fa-brands fa-youtube"></i></a>
+                  </div>
+              </div>
+          </div>
+      </div>
+      </div>
+      <div class="copy-right">
+      <div class="container footer-copy">
+      <p>Copyright ©  2025 Lewis Center Farmhouse / All rights reserved</p>
+      <span>Design &#64; <a href="https://kakatiyasolutions.com/" target="_blank">Kakatiya Solutions</a></span>
+      </div>
+  </div>
+  </div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"  crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+AOS.init();
+</script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</footer>
+</body>
+</html>
