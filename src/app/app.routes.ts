@@ -7,6 +7,7 @@ import { BarnComponent } from './barn/barn.component';
 import { ContactComponent } from './contact/contact.component';
 import { AttractionComponent } from './attraction/attraction.component';
 import { AccommodationComponent } from './accommodation/accommodation.component';
+import { BooknowComponent } from './booknow/booknow.component';
 export const routes: Routes = [
   { path: '', component: IndexComponent },
   { path: 'index', component: IndexComponent },
@@ -17,6 +18,7 @@ export const routes: Routes = [
   { path: 'barn', component: BarnComponent },
   { path: 'attractions', component: AttractionComponent },
   { path: 'policies', component: PoliciesComponent },
-   {path: 'contact', component: ContactComponent},
+  { path: 'contact', component: ContactComponent },
+    {path: 'booknow', component: BooknowComponent},
  // { path: '**', loadComponent: () => import('./not-found/not-found.component').then(m => m.NotFoundComponent) },
 ];
