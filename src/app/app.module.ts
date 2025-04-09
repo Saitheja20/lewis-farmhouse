@@ -3,9 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BooknowComponent } from './booknow/booknow.component';
+import { NgIf } from '@angular/common';
 
 @NgModule({
   declarations: [
+
 
 
   ],
@@ -14,7 +16,9 @@ import { BooknowComponent } from './booknow/booknow.component';
     FormsModule,
     ReactiveFormsModule,
     AppComponent,
-      BooknowComponent
+  FormsModule,
+    ReactiveFormsModule,
+    NgIf
   ],
   providers: [],
   bootstrap: []

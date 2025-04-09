@@ -1,54 +1,102 @@
 <p>booknow works!</p>
     <div> <a style=" width: 135px; background-color: #0D1E29; text-align: center; font-weight: 800; padding: 11px 0px; color: white; font-size: 12px; display: inline-block; text-decoration: none; border-radius:3.229px; " href='https://pmny.in/2JhzJyovygtz' > Pay Now </a> </div>
 
+
+<div class="container">
+  <div class="row">
+   <div class="col-lg-7">
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="assets/img/accommodations/living_room2.jpg" alt="First slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="assets/img/accommodations/kitchen2.jpg" alt="Second slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="assets/img/accommodations/dining_room.jpg" alt="Third slide">
+    </div>
+     <div class="carousel-item">
+      <img class="d-block w-100" src="assets/img/accommodations/exterior_front2.jpg" alt="Third slide">
+    </div>
+     <div class="carousel-item">
+      <img class="d-block w-100" src="assets/img/accommodations/floor_primary_bedroom2.jpg" alt="Third slide">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+   </div>
+   <div class="col-lg-5">
 <div class="booking-container">
-  <h2>Room Booking</h2>
+  <h2 class="text-center" style="font-weight: bold;">Room Booking</h2>
 
   <form (ngSubmit)="onSubmit()" #bookingForm="ngForm">
     <div class="form-group">
       <label for="startDate">Start Date</label>
-      <input type="date" id="startDate" name="startDate" [min]="minDate" [(ngModel)]="startDate" required (change)="checkstartDates()" />
+      <input type="date" id="startDate" name="startDate" [min]="minDate" [(ngModel)]="startDate" required (change)="checkStartDates()" />
     </div>
 
     <div class="form-group">
       <label for="endDate">End Date</label>
-      <input type="date" id="endDate" name="endDate" [min]="startDate" [(ngModel)]="endDate" required (change)="checkDates()" />
+      <input type="date" id="endDate" name="endDate" [min]="minEndDate"  [(ngModel)]="endDate" required (change)="checkDates()" />
     </div>
 
     <div class="count-group">
       <div class="count">
         <label for="adults">Adults</label>
-        <button type="button" (click)="decrement('adults')">-</button>
+        <button class="btn btn-secondary" type="button" (click)="decrement('adults')">-</button>
         <input type="number" id="adults" [(ngModel)]="adults" name="adults" min="1" required />
-        <button type="button" (click)="increment('adults')">+</button>
+        <button class="btn btn-primary" type="button" (click)="increment('adults')">+</button>
       </div>
 
       <div class="count">
         <label for="children">Children</label>
-        <button type="button" (click)="decrement('children')">-</button>
+        <button class="btn btn-secondary" type="button" (click)="decrement('children')">-</button>
         <input type="number" id="children" [(ngModel)]="children" name="children" min="0" />
-        <button type="button" (click)="increment('children')">+</button>
+        <button class="btn btn-primary" type="button" (click)="increment('children')">+</button>
       </div>
 
       <div class="count">
         <label for="pets">Pets</label>
-        <button type="button" (click)="decrement('pets')">-</button>
+        <button class="btn btn-secondary" type="button" (click)="decrement('pets')">-</button>
         <input type="number" id="pets" [(ngModel)]="pets" name="pets" min="0" />
-        <button type="button" (click)="increment('pets')">+</button>
+        <button class="btn btn-primary" type="button" (click)="increment('pets')">+</button>
       </div>
+    </div>
+<hr>
+
+    <div class="price" *ngIf="priceView">
+      <p>Price per night: {{ pricePerNight }}</p>
+      <p>Total Nights: {{ totalNights }}</p>
+      <p>Discount: {{ discount }}</p>
+      <p>Final Price: {{ finalPrice }}</p>
     </div>
 
     <!-- <button type="submit" [disabled]="!bookingForm.form.valid">Submit Booking</button> -->
-         <button type="submit" >Submit Booking</button>
+         <button class="btn btn-primary" (click)="checkAvailability()"  [disabled]="!bookingForm.form.valid">Check Out Room Is Available</button>
 
-  </form>
 
-  <div *ngIf="submitted">
+
+  <div *ngIf="available">
     <h3>Your Booking Summary</h3>
     <p>Start Date: {{ startDate }}</p>
     <p>End Date: {{ endDate }}</p>
     <p>Adults: {{ adults }}</p>
     <p>Children: {{ children }}</p>
     <p>Pets: {{ pets }}</p>
+      <button type="submit" >Proceed For Booking</button>
+  </div>
+   </form>
+</div>
+   </div>
   </div>
 </div>
+
+
