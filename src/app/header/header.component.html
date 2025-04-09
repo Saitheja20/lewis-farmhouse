@@ -27,19 +27,20 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="index.php" data-hover="Home" [routerLink]="['/index']" routerLinkActive="router-link-active" >Home</a>
+            <a class="nav-link active" [routerLink]="['/index']" routerLinkActive="router-link-active" data-hover="Home">Home</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="Accommodation.php" [routerLink]="['/accomodations']" routerLinkActive="router-link-active" data-hover="Accommodations">Accommodations</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="Accommodation.php" data-hover="Accommodations">Accommodations</a>
+            <a class="nav-link" href="barn.php" [routerLink]="['/barn']" routerLinkActive="router-link-active" data-hover="The Barn">The Barn</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="barn.php" data-hover="The Barn">The Barn</a>
+            <a class="nav-link" href="policies.php" [routerLink]="['/policies']" routerLinkActive="router-link-active" data-hover="Policies">Policies</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="policies.php" data-hover="Policies">Policies</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="attrations.php" data-hover="Attractions">Attractions</a>
+            <a class="nav-link" href="attrations.php" [routerLink]="['/attractions']" routerLinkActive="router-link-active" data-hover="Attractions">Attractions</a>
           </li>
 
 
@@ -58,7 +59,7 @@
             <a class="nav-link" href="E-gift.php" data-hover="E-Gift Cards">E-Gift Cards</a>
           </li> -->
           <li class="nav-item">
-            <a class="nav-link" href="contact2.php" data-hover="Contact">Contact</a>
+            <a class="nav-link" href="contact2.php" [routerLink]="['/contact']" routerLinkActive="router-link-active" data-hover="Contact">Contact</a>
           </li>
 
 

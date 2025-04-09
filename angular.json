@@ -22,8 +22,8 @@
             "tsConfig": "tsconfig.app.json",
             "assets": [
               {
-                "glob": "**/*",
-                "input": "public"
+              "glob": "**/*",
+              "input": "src/assets"
               }
             ],
             "styles": [
@@ -46,8 +46,8 @@
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "4kB",
-                  "maximumError": "8kB"
+                  "maximumWarning": "50kB",
+                  "maximumError": "50kb"
                 }
               ],
               "outputHashing": "all"
@@ -86,7 +86,7 @@
             "assets": [
               {
                 "glob": "**/*",
-                "input": "public"
+              "input": "src/assets"
               }
             ],
             "styles": [

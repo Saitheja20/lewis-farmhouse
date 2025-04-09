@@ -4,13 +4,19 @@ import { IndexComponent } from './index/index.component';
 import { BarnComponent } from './barn/barn.component';
  //import { AttractionsComponent } from './attractions/attractions.component';
  import { PoliciesComponent } from './policies/policies.component';
+import { ContactComponent } from './contact/contact.component';
+import { AttractionComponent } from './attraction/attraction.component';
+import { AccommodationComponent } from './accommodation/accommodation.component';
 export const routes: Routes = [
   { path: '', component: IndexComponent },
+  { path: 'index', component: IndexComponent },
  // { path: 'about', loadComponent: () => import('./about/about.component').then(m => m.AboutComponent) },
- // { path: 'contact', loadComponent: () => import('./contact/contact.component').then(m => m.ContactComponent) },
+  // { path: 'contact', loadComponent: () => import('./contact/contact.component').then(m => m.ContactComponent) },
+ { path: 'accomodations', component: AccommodationComponent },
   { path: 'header', component: HeaderComponent },
   { path: 'barn', component: BarnComponent },
- // { path: 'attractions', component: AttractionsComponent },
-  {path: 'policies', component: PoliciesComponent},
+  { path: 'attractions', component: AttractionComponent },
+  { path: 'policies', component: PoliciesComponent },
+   {path: 'contact', component: ContactComponent},
  // { path: '**', loadComponent: () => import('./not-found/not-found.component').then(m => m.NotFoundComponent) },
 ];

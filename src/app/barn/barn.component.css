@@ -1,0 +1,49 @@
+.barn_head {
+  margin-bottom: 15px;
+}
+
+.barn_head h3 {
+  font-size: 25px;
+  color: #000;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.barn_head p {
+  font-size: 18px;
+  color: #000;
+}
+
+.barn_main {
+  padding: 50px 0;
+}
+
+.barn_card_img {
+  margin: 20px 0;
+}
+
+.barn_card_img img {
+  border-radius: 15px;
+  width: 100%;
+}
+
+.barn_text_sec {
+  margin-top: 20px;
+}
+
+.barn_text_sec h3 {
+  font-size: 25px;
+  font-weight: bold;
+  color: #1f1e1e;
+  border-bottom: solid 2px #1f1e1e;
+  padding-bottom: 5px;
+  width: fit-content;
+  margin-bottom: 15px;
+}
+
+.barn_text_sec p {
+  font-size: 16px;
+  color: #000;
+  margin: 15px 0;
+  text-align: justify;
+}
