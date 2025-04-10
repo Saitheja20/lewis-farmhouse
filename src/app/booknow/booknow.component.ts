@@ -51,26 +51,25 @@ export class BooknowComponent {
     }
   }
 
-  // Function to validate the end date
+  // date validation function
 checkDates(): void {
-    // Check if both start and end dates are present and that the end date is after the start date
     if (this.endDate && this.startDate && new Date(this.endDate) <= new Date(this.startDate)) {
         alert('End date should be after the start date.');
-        this.endDate = ''; // Reset the end date
+        this.endDate = '';
     } else {
-        // Calculate the number of nights between the start and end date
         const startDateObj = new Date(this.startDate);
-        const endDateObj = new Date(this.endDate);
+      const endDateObj = new Date(this.endDate);
+
         const timeDifference = endDateObj.getTime() - startDateObj.getTime();
 
-        this.totalNights = Math.floor(timeDifference / (1000 * 3600 * 24)); // Convert milliseconds to days
+        this.totalNights = Math.floor(timeDifference / (1000 * 3600 * 24));
 
         if (this.totalNights <= 0) {
             alert('End date must be later than the start date.');
         } else {
             console.log('Dates variation: ' + this.totalNights + ' nights');
-            // Apply pricing logic
-            this.discount = 0; // Assuming no discount logic at this point
+
+            this.discount = 0;
           this.finalPrice = this.pricePerNight * this.totalNights - this.discount;
           this.priceView = true;
         }
@@ -80,7 +79,12 @@ checkDates(): void {
   onSubmit(): void {
     alert('Form submitted!');
     this.submitted = true;
-  }
+window.open('https://rzp.io/rzp/0YCgB1n', '_blank');
+
+  const script = document.createElement('script');
+  script.src = 'https://rzp.io/rzp/0YCgB1n';
+  script.async = true;
+  document.body.appendChild(script);  }
 
 
   checkStartDates() {

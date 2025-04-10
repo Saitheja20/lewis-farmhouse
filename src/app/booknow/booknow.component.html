@@ -1,102 +1,185 @@
 <p>booknow works!</p>
-    <div> <a style=" width: 135px; background-color: #0D1E29; text-align: center; font-weight: 800; padding: 11px 0px; color: white; font-size: 12px; display: inline-block; text-decoration: none; border-radius:3.229px; " href='https://pmny.in/2JhzJyovygtz' > Pay Now </a> </div>
+
 
 
 <div class="container">
   <div class="row">
-   <div class="col-lg-7">
-<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img class="d-block w-100" src="assets/img/accommodations/living_room2.jpg" alt="First slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="assets/img/accommodations/kitchen2.jpg" alt="Second slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="assets/img/accommodations/dining_room.jpg" alt="Third slide">
-    </div>
-     <div class="carousel-item">
-      <img class="d-block w-100" src="assets/img/accommodations/exterior_front2.jpg" alt="Third slide">
-    </div>
-     <div class="carousel-item">
-      <img class="d-block w-100" src="assets/img/accommodations/floor_primary_bedroom2.jpg" alt="Third slide">
-    </div>
-  </div>
-  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
-   </div>
-   <div class="col-lg-5">
-<div class="booking-container">
-  <h2 class="text-center" style="font-weight: bold;">Room Booking</h2>
-
-  <form (ngSubmit)="onSubmit()" #bookingForm="ngForm">
-    <div class="form-group">
-      <label for="startDate">Start Date</label>
-      <input type="date" id="startDate" name="startDate" [min]="minDate" [(ngModel)]="startDate" required (change)="checkStartDates()" />
-    </div>
-
-    <div class="form-group">
-      <label for="endDate">End Date</label>
-      <input type="date" id="endDate" name="endDate" [min]="minEndDate"  [(ngModel)]="endDate" required (change)="checkDates()" />
-    </div>
-
-    <div class="count-group">
-      <div class="count">
-        <label for="adults">Adults</label>
-        <button class="btn btn-secondary" type="button" (click)="decrement('adults')">-</button>
-        <input type="number" id="adults" [(ngModel)]="adults" name="adults" min="1" required />
-        <button class="btn btn-primary" type="button" (click)="increment('adults')">+</button>
-      </div>
-
-      <div class="count">
-        <label for="children">Children</label>
-        <button class="btn btn-secondary" type="button" (click)="decrement('children')">-</button>
-        <input type="number" id="children" [(ngModel)]="children" name="children" min="0" />
-        <button class="btn btn-primary" type="button" (click)="increment('children')">+</button>
-      </div>
-
-      <div class="count">
-        <label for="pets">Pets</label>
-        <button class="btn btn-secondary" type="button" (click)="decrement('pets')">-</button>
-        <input type="number" id="pets" [(ngModel)]="pets" name="pets" min="0" />
-        <button class="btn btn-primary" type="button" (click)="increment('pets')">+</button>
+    <div class="col-lg-8">
+      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="d-block w-100" src="assets/img/accommodations/living_room2.jpg" alt="First slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="assets/img/accommodations/kitchen2.jpg" alt="Second slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="assets/img/accommodations/dining_room.jpg" alt="Third slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="assets/img/accommodations/exterior_front2.jpg" alt="Third slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="assets/img/accommodations/floor_primary_bedroom2.jpg" alt="Third slide">
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
       </div>
     </div>
+    <div class="col-lg-4">
+      <div class="booking-container">
+        <h2 class="text-center" style="font-weight: bold;">Room Booking</h2>
+
+        <form (ngSubmit)="onSubmit()" #bookingForm="ngForm">
+          <div class="form-group">
+            <label for="startDate">CHECK-IN</label>
+            <input type="date" id="startDate" name="startDate" [min]="minDate" [(ngModel)]="startDate" required
+              (change)="checkStartDates()" />
+          </div>
+
+          <div class="form-group">
+            <label for="endDate">CHECKOUT</label>
+            <input type="date" id="endDate" name="endDate" [min]="minEndDate" [(ngModel)]="endDate" required
+              (change)="checkDates()" />
+          </div>
+
+          <div class="count-group1">
+            <div class="count" style="display: flex; justify-content: space-between; align-items: center;">
+              <!-- Label on the left -->
+              <label for="adults" style="margin-right: 8px;">Adults  <span style="display: block; font-size: 12px; margin-top: 2px;">Ages 13 or above</span></label>
+
+              <!-- Counter group (buttons and input) on the right -->
+              <div style="display: flex; align-items: center; gap: 2px;">
+                <button class="btn btn-secondary" type="button" (click)="decrement('adults')">-</button>
+                <input type="number" id="adults" [(ngModel)]="adults" name="adults" min="1" required
+                  style="width: 50px; border-radius: 30px; padding-left: 8px; text-align: center;" />
+                <button class="btn btn-primary" type="button" (click)="increment('adults')">+</button>
+              </div>
+            </div>
+
+          <hr>
+
+            <div class="count" style="display: flex; justify-content: space-between; align-items: center;">
+              <label for="children" style="margin-right: 8px;">Children  <span style="display: block; font-size: 12px; margin-top: 2px;">Ages 2–12</span></label>
+
+              <!-- Counter group for children -->
+              <div style="display: flex; align-items: center; gap: 2px;">
+                <button class="btn btn-secondary" type="button" (click)="decrement('children')">-</button>
+                <input type="number" id="children" [(ngModel)]="children" name="children" min="0"
+                  style="width: 50px; border-radius: 30px; padding-left: 8px; text-align: center;" />
+                <button class="btn btn-primary" type="button" (click)="increment('children')">+</button>
+              </div>
+            </div>
 <hr>
+            <!-- Pets Section -->
+            <div class="count" style="display: flex; justify-content: space-between; align-items: center;">
+              <label for="pets" style="margin-right: 8px;">Pets</label>
 
-    <div class="price" *ngIf="priceView">
-      <p>Price per night: {{ pricePerNight }}</p>
-      <p>Total Nights: {{ totalNights }}</p>
-      <p>Discount: {{ discount }}</p>
-      <p>Final Price: {{ finalPrice }}</p>
+              <!-- Counter group for pets -->
+              <div style="display: flex; align-items: center; gap: 2px;">
+                <button class="btn btn-secondary" type="button" (click)="decrement('pets')">-</button>
+                <input type="number" id="pets" [(ngModel)]="pets" name="pets" min="0"
+                  style="width: 50px; border-radius: 30px; padding-left: 8px; text-align: center;" />
+                <button class="btn btn-primary" type="button" (click)="increment('pets')">+</button>
+              </div>
+            </div>
+          </div>
+          <hr>
+
+          <!-- <div class="price" *ngIf="priceView">
+            <p>Price per night: {{ pricePerNight }}</p>
+            <p>Total Nights: {{ totalNights }}</p>
+            <p>Discount: {{ discount }}</p>
+            <p>Final Price: {{ finalPrice }}</p>
+          </div> -->
+
+          <div class="price" *ngIf="priceView">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <p style="margin: 0;">Price per night:</p>
+              <p style="margin: 0;">{{ pricePerNight }}</p>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <p style="margin: 0;">Total Nights:</p>
+              <p style="margin: 0;">{{ totalNights }}</p>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <p style="margin: 0;">Discount:</p>
+              <p style="margin: 0;">{{ discount }}</p>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <p style="margin: 0;">Final Price:</p>
+              <p style="margin: 0;">{{ finalPrice }}</p>
+            </div>
+          </div>
+
+
+          <!-- <button type="submit" [disabled]="!bookingForm.form.valid">Submit Booking</button> -->
+          <div class="text-center">
+            <button class="btn btn-primary text-center" (click)="checkAvailability()"
+              [disabled]="!bookingForm.form.valid">Check Out Room Is Available</button>
+          </div>
+
+
+          <!-- <div *ngIf="available">
+              <h3>Your Booking Summary</h3>
+              <p>Start Date: {{ startDate }}</p>
+              <p>End Date: {{ endDate }}</p>
+              <p>Adults: {{ adults }}</p>
+              <p>Children: {{ children }}</p>
+              <p>Pets: {{ pets }}</p>
+                <button type="submit" >Proceed For Booking</button>
+            </div> -->
+
+          <div *ngIf="available">
+            <h3>Your Booking Summary</h3>
+
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <p style="margin: 0;">Start Date:</p>
+              <p style="margin: 0;">{{ startDate }}</p>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <p style="margin: 0;">End Date:</p>
+              <p style="margin: 0;">{{ endDate }}</p>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <p style="margin: 0;">Adults:</p>
+              <p style="margin: 0;">{{ adults }}</p>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <p style="margin: 0;">Children:</p>
+              <p style="margin: 0;">{{ children }}</p>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <p style="margin: 0;">Pets:</p>
+              <p style="margin: 0;">{{ pets }}</p>
+            </div>
+<form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_QH30YxLiG7QgEq" async> </script> Buy Now</form>
+           <div class="text-center">
+            <a href="https://rzp.io/rzp/0YCgB1n" target="_blank"><button class="btn btn-primary" type="submit">Pay Now</button></a>
+            <!-- <div> <a style=" width: 200px; background-color: #1065b7; text-align: center; font-weight: 800; padding: 11px 0px; color: white; font-size: 12px; display: inline-block; text-decoration: none; border-radius:3.229px; " href='https://pmny.in/HIRRjIsQCkGX' > Pay Now </a> </div> -->
+          <!-- <form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_QH30YxLiG7QgEq" async> </script> </form> -->
+          </div>
+
+        </div>
+
+
+
+        </form>
+      </div>
     </div>
-
-    <!-- <button type="submit" [disabled]="!bookingForm.form.valid">Submit Booking</button> -->
-         <button class="btn btn-primary" (click)="checkAvailability()"  [disabled]="!bookingForm.form.valid">Check Out Room Is Available</button>
-
-
-
-  <div *ngIf="available">
-    <h3>Your Booking Summary</h3>
-    <p>Start Date: {{ startDate }}</p>
-    <p>End Date: {{ endDate }}</p>
-    <p>Adults: {{ adults }}</p>
-    <p>Children: {{ children }}</p>
-    <p>Pets: {{ pets }}</p>
-      <button type="submit" >Proceed For Booking</button>
-  </div>
-   </form>
-</div>
-   </div>
   </div>
 </div>
-
-
