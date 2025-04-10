@@ -18,10 +18,11 @@ import { HttpClient } from '@angular/common/http';
 })
 export class RegisterComponent {
   registerForm!: FormGroup;
+ // public authService: any;
 
   // Inject services without constructor
   // private fb = inject(FormBuilder);
-  // private authService = inject(AuthService);
+   //private authService = inject(AuthService);
   // private router = inject(Router);
 
   // constructor(
@@ -33,7 +34,8 @@ export class RegisterComponent {
   constructor(
     private fb: FormBuilder,
     private http: HttpClient,
-     //private authService: AuthService,
+    private authService: AuthService,
+
     private router: Router
   ) {
     this.registerForm = this.fb.group({
@@ -49,19 +51,33 @@ export class RegisterComponent {
     //    email: ['', [Validators.required, Validators.email]],
     //    password: ['', Validators.required]
     //  });
+
+    //  if (this.registerForm.valid) {
+    //   this.authService.register(this.registerForm.value).subscribe({
+    //     next: () => this.router.navigate(['/login']),
+    //     error: (err) => console.error(err)
+    //   });
+    //  }
+     //  this.authService = inject(AuthService);
   }
 
 
   onRegister() {
     alert('Registration successful!'+JSON.stringify(this.registerForm.value));
      if (this.registerForm.valid) {
-      const formData = this.registerForm.value;
-      const apiUrl = 'http://localhost/Api/register.php';
+      // const formData = this.registerForm.value;
+      // const apiUrl = 'http://localhost/Api/register.php';
 
-      this.http.post(apiUrl, formData).subscribe({
+      // this.http.post(apiUrl, formData).subscribe({
+      //   next: () => this.router.navigate(['/login']),
+      //   error: (err) => console.error('Registration error:', err)
+       // });
+         //  if (this.registerForm.valid) {
+      this.authService.register(this.registerForm.value).subscribe({
         next: () => this.router.navigate(['/login']),
-        error: (err) => console.error('Registration error:', err)
+        error: (err:any) => console.error(err)
       });
+    //  }
     }
   }
 }

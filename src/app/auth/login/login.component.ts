@@ -28,7 +28,7 @@ export class LoginComponent {
       this.authService.login(this.loginForm.value).subscribe({
         next: (res: any) => {
           localStorage.setItem('token', res.token);
-          this.router.navigate(['/dashboard']);
+          this.router.navigate(['/index']);
         },
         error: (err) => console.error(err),
       });

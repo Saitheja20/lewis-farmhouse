@@ -13,9 +13,9 @@ import { RegisterComponent } from './auth/register/register.component';
 export const routes: Routes = [
     { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-   { path: '', redirectTo: '/register', pathMatch: 'full' },
-   { path: '**', redirectTo: '/register' }, // wildcard route for 404s
-  // { path: '', component: IndexComponent },
+  // { path: '', redirectTo: '/register', pathMatch: 'full' },
+  // { path: '**', redirectTo: '/register' }, // wildcard route for 404s
+   { path: '', component: IndexComponent },
   { path: 'index', component: IndexComponent },
  // { path: 'about', loadComponent: () => import('./about/about.component').then(m => m.AboutComponent) },
   // { path: 'contact', loadComponent: () => import('./contact/contact.component').then(m => m.ContactComponent) },
