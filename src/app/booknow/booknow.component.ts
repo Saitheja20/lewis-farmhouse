@@ -1,17 +1,22 @@
 import { Component } from '@angular/core';
-import { NgModel } from '@angular/forms';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { NgIf, NgFor } from '@angular/common';
-import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule, FormBuilder, FormGroup, Validators,FormsModule } from '@angular/forms'; // Correct ReactiveForms imports
+import { CommonModule } from '@angular/common'; // CommonModule is already good
+import { RouterModule } from '@angular/router'; // If you need routing (you might need this later)
+
 @Component({
   selector: 'app-booknow',
-  imports:[FormsModule, ReactiveFormsModule, NgIf,CommonModule],
+  standalone: true,  // If using Standalone Component
+  imports: [
+    ReactiveFormsModule, // ✅ Required for FormBuilder, FormGroup, etc.
+    CommonModule, // CommonModule is needed for *ngIf, *ngFor, etc.
+    RouterModule,
+    FormsModule// Add if needed
+  ],
   templateUrl: './booknow.component.html',
-  styleUrl: './booknow.component.css'
+  styleUrls: ['./booknow.component.css']
 })
 export class BooknowComponent {
-
-
+  registerForm: FormGroup;
   startDate: string = '';
   endDate: string = '';
   adults: number = 1;
@@ -27,6 +32,15 @@ export class BooknowComponent {
   finalPrice: number = this.pricePerNight * this.totalNights - this.discount;
   priceView: boolean = false;
   available: boolean = false;
+
+  constructor(private fb: FormBuilder) {
+    // Reactive form initialization
+    this.registerForm = this.fb.group({
+      username: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', Validators.required]
+    });
+  }
 
   // Function to handle increment and decrement
   increment(type: string): void {
@@ -105,5 +119,14 @@ window.open('https://rzp.io/rzp/0YCgB1n', '_blank');
   // check availability
   checkAvailability() {
     this.available = true;
-}
+  }
+
+    onRegister() {
+    // if (this.registerForm.valid) {
+    //   this.authService.register(this.registerForm.value).subscribe({
+    //     next: () => this.router.navigate(['/login']),
+    //     error: (err) => console.error(err)
+    //   });
+    // }
+  }
 }

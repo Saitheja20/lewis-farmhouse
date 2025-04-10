@@ -4,10 +4,12 @@ import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BooknowComponent } from './booknow/booknow.component';
 import { NgIf } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
+import { RegisterComponent } from './auth/register/register.component';
+import { LoginComponent } from './auth/login/login.component';
 
 @NgModule({
   declarations: [
-
 
 
   ],
@@ -15,10 +17,12 @@ import { NgIf } from '@angular/common';
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    AppComponent,
+    HttpClientModule,
   FormsModule,
     ReactiveFormsModule,
-    NgIf
+    NgIf,
+     RegisterComponent,
+    LoginComponent,
   ],
   providers: [],
   bootstrap: []
